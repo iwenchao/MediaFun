@@ -1,0 +1,14 @@
+/build
+.idea
+*.iml
+.gradle
+/.idea
+/local.properties
+.DS_Store
+build/
+/captures
+/moduleCore/module_flutter
+.externalNativeBuild
+.cxx
+/app/release/
+*.plantuml

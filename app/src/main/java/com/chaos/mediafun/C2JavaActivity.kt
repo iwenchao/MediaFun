@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.chaos.mediafun.base.BaseActivity
 import com.chaos.mediafun.databinding.ActivityC2JavaBinding
+import com.chaos.mediafun.native.NormalUserInfo
 
 /**
  * @Author      : wen
@@ -24,16 +25,24 @@ class C2JavaActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityC2JavaBinding>(this, R.layout.activity_c_2_java)
+
+        val userInfo = NormalUserInfo()
+        val userInfo2 = getPerson()
         binding.tvText.setOnClickListener {
-            binding.tvText.text = sayHello()
+            binding.tvText.text = userInfo.sayHello()
+        }
+        binding.tvText2.setOnClickListener {
+            binding.tvText2.text = userInfo.add(1,2).toString()
         }
 
+        binding.tvText3.setOnClickListener {
+            userInfo2.doWork()
+        }
 
     }
 
 
-  external fun sayHello():String
-
+    external fun getPerson():NormalUserInfo
 
 
 }

@@ -28,3 +28,4 @@ Java_com_chaos_mediafun_C2JavaActivity_getPerson(JNIEnv *env, jobject thiz) {
     jobject personObj = env->NewObject(objClazz, initMethod, env->NewStringUTF("chaos"), 18);
     return personObj;
 }
+

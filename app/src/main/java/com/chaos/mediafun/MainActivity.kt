@@ -1,6 +1,7 @@
 package com.chaos.mediafun
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -18,11 +19,20 @@ class MainActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        binding.toolbar.setTitle("MediaFun")
         binding.tvC2Java.setOnClickListener {
             startActivity(Intent(this,C2JavaActivity::class.java))
         }
+        binding.tv2Douyin.setOnClickListener {
+            startActivity(Intent().apply {
+                this.setData(Uri.parse("snssdk1128://user/profile/93325972684"))
+            })
+        }
     }
 
+
+
+    fun starDouyin(){
+
+    }
 
 }

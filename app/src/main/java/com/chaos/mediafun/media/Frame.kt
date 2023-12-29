@@ -12,7 +12,7 @@ import java.nio.ByteBuffer
 class Frame {
     var buffer: ByteBuffer? = null
     var bufferInfo = MediaCodec.BufferInfo()
-        private set
+        internal set
 
 
     fun setBufferInfo(bufferInfo: MediaCodec.BufferInfo) {

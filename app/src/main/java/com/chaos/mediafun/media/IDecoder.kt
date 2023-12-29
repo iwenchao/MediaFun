@@ -61,7 +61,7 @@ interface IDecoder : Runnable {
     fun getTrack(): Int
     fun getFilePath(): String
     fun setSizeListener(listener: IDecoderProgress)
-    fun setStateListener(listener: IDecoderProgress)
+    fun setStateListener(listener: IDecoderStateListener)
 
 
 }

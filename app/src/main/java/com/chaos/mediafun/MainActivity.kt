@@ -30,6 +30,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.tv2SimplePlay.setOnClickListener {
             startActivity(Intent(this, SimplePlayerActivity::class.java))
         }
+        binding.tv2SimpleRender.setOnClickListener {
+            startActivity(Intent(this, SimpleRenderActivity::class.java).apply {
+                putExtra("type", 0)
+            })
+        }
+        binding.tv2SimpleRender2.setOnClickListener {
+            startActivity(Intent(this, SimpleRenderActivity::class.java).apply {
+                putExtra("type", 1)
+            })
+        }
     }
 
     private fun requestPermission() {

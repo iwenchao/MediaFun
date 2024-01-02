@@ -196,8 +196,8 @@ class VideoRender:IRender {
     }
 
     private fun activeTexture(){
-        //激活指定纹理单元
-        GLES20.glActiveTexture(GLES20.GL_ACTIVE_TEXTURE)
+        //激活指定纹理单元，// 设置当前活动的纹理单元为纹理单元0
+        GLES20.glActiveTexture(GLES20.GL_TEXTURE0)
         //绑定纹理id到纹理单元
         GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,mTextureId)
         //将激活的纹理单元传递到着色器中

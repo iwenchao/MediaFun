@@ -43,6 +43,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.tv2OpenGLPlayer.setOnClickListener {
             startActivity(Intent(this, OpenGLPlayerActivity::class.java))
         }
+        binding.tv2MultiOpenGLPlayer.setOnClickListener {
+            startActivity(Intent(this, MultiOpenGLPlayerActivity::class.java))
+        }
     }
 
     private fun requestPermission() {

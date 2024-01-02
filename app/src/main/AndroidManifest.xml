@@ -32,6 +32,7 @@
         <activity android:name="com.chaos.mediafun.SimplePlayerActivity" />
         <activity android:name="com.chaos.mediafun.SimpleRenderActivity" />
         <activity android:name="com.chaos.mediafun.OpenGLPlayerActivity" />
+        <activity android:name="com.chaos.mediafun.MultiOpenGLPlayerActivity" />
     </application>
 
 </manifest>

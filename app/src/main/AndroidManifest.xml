@@ -31,6 +31,7 @@
         <activity android:name="com.chaos.mediafun.C2JavaActivity" />
         <activity android:name="com.chaos.mediafun.SimplePlayerActivity" />
         <activity android:name="com.chaos.mediafun.SimpleRenderActivity" />
+        <activity android:name="com.chaos.mediafun.OpenGLPlayerActivity" />
     </application>
 
 </manifest>

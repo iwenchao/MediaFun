@@ -40,6 +40,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 putExtra("type", 1)
             })
         }
+        binding.tv2OpenGLPlayer.setOnClickListener {
+            startActivity(Intent(this, OpenGLPlayerActivity::class.java))
+        }
     }
 
     private fun requestPermission() {

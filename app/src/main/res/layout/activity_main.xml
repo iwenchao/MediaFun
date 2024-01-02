@@ -75,5 +75,18 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv2SimpleRender" />
 
+
+        <TextView
+            android:id="@+id/tv2OpenGLPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="原生OpenGL-渲染视频"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv2SimpleRender2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

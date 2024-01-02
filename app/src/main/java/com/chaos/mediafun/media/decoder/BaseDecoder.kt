@@ -121,7 +121,7 @@ abstract class BaseDecoder(private val filePath: String) : IDecoder {
                         state = DecodeState.PAUSE
                     }
                 }else{
-                    Log.i("TAG","解码器没有数据")
+                    Log.i("TAG","解码器没有数据${this.javaClass}")
                 }
                 //解码步骤6：判断是否需要继续解码
                 if(bufferInfo!!.flags == MediaCodec.BUFFER_FLAG_END_OF_STREAM){
@@ -277,7 +277,7 @@ abstract class BaseDecoder(private val filePath: String) : IDecoder {
         val curTime = getCurTimeStamp()
         if(curTime > passTime){
             Thread.sleep(curTime - passTime)
-            Log.i(TAG, "sleepRender: ${curTime - passTime}")
+//            Log.i(TAG, "sleepRender: ${curTime - passTime}")
         }
     }
 

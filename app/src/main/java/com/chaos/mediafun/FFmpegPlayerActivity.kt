@@ -14,7 +14,7 @@ import java.io.File
  * @Date        : on 2024/1/2 17:01.
  * @Description :描述
  */
-class FFmpegPlayerActivity:BaseActivity<ActivityFfmpegPlayerBinding>() {
+class FFmpegPlayerActivity : BaseActivity<ActivityFfmpegPlayerBinding>() {
 
     val path = Environment.getExternalStorageDirectory().absolutePath + "/funmedia.mp4"
 
@@ -27,14 +27,18 @@ class FFmpegPlayerActivity:BaseActivity<ActivityFfmpegPlayerBinding>() {
 
     override fun afterViews() {
 
-
+        initSurface()
     }
 
-    private fun initSurface(){
+    private fun initSurface() {
         if (File(path).exists()) {
             binding.glSurfaceView.holder.addCallback(object : SurfaceHolder.Callback {
-                override fun surfaceChanged(holder: SurfaceHolder, format: Int,
-                                            width: Int, height: Int) {}
+                override fun surfaceChanged(
+                    holder: SurfaceHolder, format: Int,
+                    width: Int, height: Int
+                ) {
+                }
+
                 override fun surfaceDestroyed(holder: SurfaceHolder) {}
 
                 override fun surfaceCreated(holder: SurfaceHolder) {
@@ -45,12 +49,20 @@ class FFmpegPlayerActivity:BaseActivity<ActivityFfmpegPlayerBinding>() {
                 }
             })
         } else {
-            Toast.makeText(this, "视频文件不存在，请在手机根目录下放置 funmedia.mp4", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                "文件不存在，请在手机根目录下放置 funmedia.mp4",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
-    external fun createPlayer(filePath:String, surface: Surface):Int?
+    external fun createPlayer(filePath: String, surface: Surface): Int
 
-    external fun play(player:Int)
+    external fun play(player: Int)
+
+    external fun pause(player: Int)
+
+    external fun ffmpegInfo(): String
 
 }

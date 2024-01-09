@@ -19,7 +19,7 @@ message("PROJECT_SOURCE_DIR:${PROJECT_SOURCE_DIR}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
 
 # 定义so库和头文件所在目录，方便后续使用
-set(ffmpeg_lib_dir ${CMAKE_CURRENT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/)
+set(ffmpeg_lib_dir ${CMAKE_CURRENT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
 set(ffmpeg_head_dir ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg)
 
 # 添加ffmpep库包含头文件的目录
@@ -64,10 +64,23 @@ add_library(
         ffMedia
         SHARED
         # 源码
-        jniImpl.cpp
-        Hello.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/jniImpl.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Hello.cpp
         # 工具
-        utils/logger.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/utils/logger.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/media/const.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/media/one_frame.h
+        # decode
+        ${CMAKE_CURRENT_SOURCE_DIR}/media/decoder/i_decoder.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/media/decoder/i_decode_state_cb.h
+
+        #player
+        ${CMAKE_CURRENT_SOURCE_DIR}/media/player/gl_player/gl_player.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/media/player/gl_player/gl_player.cpp
+
+        # 其他
+
+
 )
 
 # 指定编译目标库时，cmake要链接的库
